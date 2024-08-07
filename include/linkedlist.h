@@ -7,11 +7,20 @@ struct Node
 {
     struct Node *head;
     struct Node *tail;
+    // TODO does order matter?
+    const char *contents;
 };
 
-struct Node *Node_init();
-void Node_insert(struct Node *, const char *);
-struct Node *Node_find(struct Node *, const char *);
-bool Node_delete(struct Node *);
+struct LList
+{
+    struct Node *head;
+    struct Node *tail;
+};
+
+struct Node *
+Node_init();
+void Node_insert(struct LList *, const char *);
+struct Node *Node_find(struct LList *, const char *);
+bool Node_delete(struct LList *, const char *);
 
 #endif // LINKEDLIST_H
